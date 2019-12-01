@@ -1,0 +1,52 @@
+.content
+{
+    max-height:500px; 
+    margin:40px 0; 
+    overflow:auto;  
+}
+.sectionHeading
+{
+    color:$whiteColor;
+    font: 40px/86px Pacifico; 
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    @media #{$tablet} 
+    {
+        font-size:30px;
+    }
+    @media #{$mobile} 
+    {
+       font-size:24px;
+    }
+}
+.description
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color:$whiteColor;
+     @media #{$tablet} 
+    {
+       font-size: 13px;
+    }
+}
+.textInfinite {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(6, 6, 6, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

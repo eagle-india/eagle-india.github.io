@@ -1,0 +1,35 @@
+/*.homeBanner
+{
+   padding:122px 0 182px;
+    h1
+    {
+        color:$bannerHeadingColor;
+        font-size:48px!important;
+        font-weight:700!important;
+        text-transform:uppercase;
+        line-height:50px!important;
+        span
+        {
+            color:$bannerHighlightColor;
+            font-size:48px!important;
+            font-weight:700!important;
+        }
+    }
+    p
+    {
+      color:$bannerHeadingColor!important;
+      font-size:16px!important;
+      margin:40px 0!important;
+      line-height:21px!important;
+      font-weight: 300
+    }
+    button
+    {
+        @include button($bannerBtnBgColor,$bannerBtnTextColor,18px,10px 25px);
+        @include radius(0);
+        text-transform: uppercase;
+        border:$whiteColor solid 1px;
+        @include transition(all, 0.5s, ease, 0s); 
+    }
+}
+  */

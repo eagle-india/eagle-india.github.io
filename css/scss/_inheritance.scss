@@ -1,0 +1,225 @@
+
+/****************************************************/
+ 
+
+ 
+
+$main-color: #92f1f1;   
+
+.fullFill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.imgOverLine
+{
+    @extend .fullFill;
+    width:300px;
+    height:300px;
+    @media #{$tablet} 
+    {
+         width:250px; height:250px;
+    }
+    @media #{$mobile} 
+    {
+         width:200px; height:200px;
+    }
+    margin: auto;
+    color: $main-color;
+    box-shadow: inset 0 0 0 1px rgba($main-color, .5);
+    position: relative;z-index: 1;
+    
+    img{
+        width:300px; height:300px;
+        @media #{$tablet} 
+        {
+             width:250px; height:250px;
+        }
+         @media #{$mobile} 
+        {
+             width:200px; height:200px;
+        }
+    }
+    &::before,
+    &::after 
+    {
+        @extend .fullFill;
+        content: '';
+        z-index: -1;
+        margin: -1 * .05 * 100%;
+        box-shadow: inset 0 0 0 1px; 
+        animation: clipMe 8s linear infinite;
+    }
+    &::before 
+    {
+        animation-delay: 8s * -.5;
+    }
+}
+ @keyframes clipMe {
+    
+  0%, 100% {clip: rect(0px, 330px, 1px, 0px); }
+  25% {clip: rect(0px, 1px, 330px, 0px); }
+  50% {clip: rect(330px - 1px, 330px, 330px, 0px); }
+  75% {clip: rect(0px, 330px, 330px, 330px - 1px); }
+        }
+    @media #{$tablet} 
+    {
+       @keyframes clipMe {
+    
+  0%, 100% {clip: rect(0px, 280px, 1px, 0px); }
+  25% {clip: rect(0px, 1px, 280px, 0px); }
+  50% {clip: rect(280px - 1px, 280px, 280px, 0px); }
+  75% {clip: rect(0px, 280px, 280px, 280px - 1px); }
+        } 
+    }
+ @media #{$mobile} 
+    {
+         @keyframes clipMe {
+    
+  0%, 100% {clip: rect(0px, 230px, 1px, 0px); }
+  25% {clip: rect(0px, 1px, 230px, 0px); }
+  50% {clip: rect(230px - 1px, 230px, 230px, 0px); }
+  75% {clip: rect(0px, 230px, 230px, 230px - 1px); }
+        }
+    }
+     
+ 
+
+/////
+
+ 
+ 
+/******************************************/
+  .view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-perspective: 400;
+    perspective: 400;
+      z-index: 99
+}
+.plane.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-transform: rotateX(60deg) rotateZ(-30deg);
+    transform: rotateX(60deg) rotateZ(-30deg);
+    -webkit-animation: rotate 20s infinite linear;
+    animation: rotate 20s infinite linear;
+}
+.plane {
+    width: 320px;
+    height: 320px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.plane.main .circle:nth-child(1) {
+    -webkit-transform: rotateZ(72deg) rotateX(63.435deg);
+    transform: rotateZ(72deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(2) {
+    -webkit-transform: rotateZ(144deg) rotateX(63.435deg);
+    transform: rotateZ(144deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(3) {
+    -webkit-transform: rotateZ(216deg) rotateX(63.435deg);
+    transform: rotateZ(216deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(4) {
+    -webkit-transform: rotateZ(288deg) rotateX(63.435deg);
+    transform: rotateZ(288deg) rotateX(63.435deg);
+}
+.plane.main .circle:nth-child(5) {
+    -webkit-transform: rotateZ(360deg) rotateX(63.435deg);
+    transform: rotateZ(360deg) rotateX(63.435deg);
+}
+.plane.main .circle {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border-radius: 100%;
+    box-sizing: border-box;
+    box-shadow:0 0 60px #00abc9, inset 0 0 60px rgba(0, 188, 212, 0.7);
+}
+.main .circle::before, .plane.main .circle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10%;
+    height: 10%;
+    border-radius: 100%;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 0 60px 2px #ffffff;
+}
+.plane.main .circle::before {
+    -webkit-transform: translateZ(-90px);
+    transform: translateZ(-90px);
+}
+.plane
+.plane.main .circle::after {
+    -webkit-transform: translateZ(90px);
+    transform: translateZ(90px);
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+}
+ 
+
+ 

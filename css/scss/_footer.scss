@@ -1,0 +1,99 @@
+/*footer
+{
+    background-color:rgba($footerBgColor,0.93);
+    padding:45px 0;
+    h5{
+        color:$footerHeadingColor;
+        font-size:21px;
+        margin-bottom: 15px 
+    }
+   p{color:$footerTextColor;font-size: 14px}
+    .contactUs
+    {
+        p
+        {
+            position: relative;
+            padding-left: 25px;
+          .fa
+            {
+                color:$footerIconColor;
+                position: absolute;
+                left: 0px;
+                top: 3px;
+            }
+        }
+    }
+    a{
+        color:$footerLinkColor;
+        &:hover{
+            color:$footerLinkHoverColor;
+            text-decoration:none
+        }
+    }
+
+    .socialLinks
+    {
+        a
+        {
+            display:inline-block;
+            width: 38px;
+            height: 38px;
+            margin:3px;
+            background-color:rgba($footerSocialIconBgColor,1);
+            color:$footerSocialIconColor;
+            line-height: 38px;
+            text-align: center;
+            @include radius(100%);
+             
+            @include transition(all, 0.5s, ease, 0s);
+            .fa
+            {
+               color:$footerSocialIconColor;
+                 
+                @include transition(all, 0.5s, ease, 0s);
+                
+            }
+             &.fb
+                {
+                    background-color:$facebookColor;
+                };
+            &.tw
+                {
+                    background-color:$twitterColor;
+                };
+            &.pt
+                {
+                    background-color:$pinterestColor;
+                };
+            &.gp
+                {
+                    background-color:$googleplusColor;
+                }
+            &:hover
+            {
+                 background-color:$footerSocialIconBgHoverColor;
+                color:$footerSocialIconHoverColor;
+                 
+                @include transition(all, 0.5s, ease, 0s);
+                .fa
+                {
+                 color:$footerSocialIconHoverColor;
+                  
+                 @include transition(all, 0.5s, ease, 0s);
+                }
+            }
+        }
+    }
+}
+.copyRight
+{
+    background-color:$copyrightBgColor;
+    p{
+        font-size:14px;
+        color:rgba($copyrightTextColor,0.9);
+        padding:15px 0
+    }
+}
+ footer.entry-footer{
+    background: transparent;
+ }*/

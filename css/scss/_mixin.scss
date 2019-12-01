@@ -1,0 +1,155 @@
+/*********** font ***********/
+@mixin font-face($familyname, $fname, $style, $weight: 300){
+    $filepath: "../fonts/" + $familyname + "/" + $fname;
+    @font-face {    font-family: "#{$familyname}";
+                    src: url($filepath + ".eot");
+                    src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype'), url($filepath + ".svg#" + $familyname + "            ") format('svg');
+                    font-weight: $weight;
+                    font-style: $style
+                }
+}
+
+/******** Transition *********/
+@mixin transition($property, $duration, $function, $delay) 
+{
+ transition: $property $duration $function $delay;
+ -webkit-transition:$property $duration $function $delay;
+-moz-transition:$property $duration $function $delay;
+-ms-transition:$property $duration $function $delay;
+-o-transition:$property $duration $function $delay;
+ }
+
+/******** transform *********/
+@mixin transform($x: -50%, $y: -50%) 
+{
+ transform:translate($x, $y);
+ -webkit-transform:translate($x, $y);
+-moz-transform:translate($x, $y);
+-ms-transform:translate($x, $y);
+-o-transform:translate($x, $y);
+ }
+@mixin transformTranslate3d($x: 0, $y: 0,$z: 0) 
+{
+ -webkit-transform: translate3d( $x,$y,$z);
+ -moz-transform: translate3d( $x,$y,$z);
+ -ms-transform: translate3d( $x,$y,$z);
+ -o-transform: translate3d( $x,$y,$z);
+        transform: translate3d( $x,$y,$z);
+ }
+/******** animationInfinite *********/
+@mixin animationInfinite($preserve-3d,$pageScrollArrowdown,$s,$infinite,$linear)
+{
+    -webkit-transform-style: $preserve-3d;
+     -moz-transform-style: $preserve-3d;
+     -ms-transform-style: $preserve-3d;
+     -o-transform-style: $preserve-3d;
+    transform-style: $preserve-3d;
+    -webkit-animation-name: $pageScrollArrowdown;
+     -moz-animation-name: $pageScrollArrowdown;
+     -ms-animation-name: $pageScrollArrowdown;
+     -o-animation-name: $pageScrollArrowdown;
+    animation-name: $pageScrollArrowdown;
+    -webkit-animation-duration: $s;
+    -moz-animation-duration: $s;
+    -ms-animation-duration: $s;
+    -o-animation-duration: $s;
+    animation-duration: $s;
+    -webkit-animation-iteration-count: $infinite;
+    -moz-animation-iteration-count: $infinite;
+    -ms-animation-iteration-count: $infinite;
+    -o-animation-iteration-count: $infinite;
+    animation-iteration-count: $infinite;
+    -webkit-animation-timing-function: $linear;
+    -moz-animation-timing-function: $linear;
+    -ms-animation-timing-function: $linear;
+    -o-animation-timing-function: $linear;
+    animation-timing-function: $linear;
+ }
+/************* gradient **************/
+@mixin gradient($direction, $from, $to) {
+    background: $to!important;
+    background: -moz-linear-gradient($direction, $from 0%, $to 100%)!important;
+    background: -webkit-gradient(linear, $direction, color-stop(0%,$from), color-stop(100%,$to))!important;
+    background: -webkit-linear-gradient($direction, $from 0%,$to 100%)!important;
+    background: -o-linear-gradient($direction, $from 0%,$to 100%)!important;
+    background: linear-gradient($direction, $from 0%,$to 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to})!important
+}
+/************** Shadow ************/
+@mixin shadow($top, $left, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $spread $color;
+    -moz-box-shadow:inset $top $left $blur $spread $color;
+    box-shadow:inset $top $left $blur $spread $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $spread $color;
+    -moz-box-shadow: $top $left $blur $spread $color;
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+/*********** radius ************/
+@mixin radius($radius:100%)
+{
+	-webkit-border-radius:$radius!important;
+	-ms-border-radius:$radius!important;
+	-moz-border-radius:$radius!important;
+	-o-border-radius:$radius!important;
+	border-radius:$radius!important;
+}
+/*********** rotate ************/
+@mixin rotate($value:0)
+{
+    -webkit-transform: rotate($value);
+    -moz-transform: rotate($value);
+    -ms-transform: rotate($value);
+    -o-transform: rotate($value);
+    transform: rotate($value);
+}
+/*********** flex-direction ************/
+@mixin flex-direction($value:column)
+{
+    -webkit-flex-direction: $value;
+    -moz-flex-direction: $value;
+    -ms-flex-direction: $value;
+    -o-flex-direction: $value;
+    flex-direction: $value;
+}
+/*********** flex-direction ************/
+ 
+/*********** justify-content ************/
+@mixin justify-content($value:flex-start)
+{
+    -webkit-justify-content: $value;
+    -moz-fjustify-content: $value;
+    -ms-justify-content: $value;
+    -o-justify-content: $value;
+    justify-content: $value;
+}
+
+@mixin  gradient_text($firstColor:#00e3ce,$secondColor:#f55252) {
+    background: -webkit-gradient(linear,left top, right top,from($firstColor) , to($secondColor));
+    background: -webkit-linear-gradient(left,$firstColor , $secondColor);
+    background: -o-linear-gradient(left,$firstColor , $secondColor);
+    background: linear-gradient(90deg,$firstColor , $secondColor);  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/******** Button *********/
+@mixin btnFormat($bgColor:$primaryColor,$bgColorHover:$primaryColor,$textColor:$blackColor,$fontSize:16px,$padding:12px 30px) {
+  background: $bgColor;
+  color:$textColor;
+  font-size: $fontSize;
+  margin: 0;
+  padding:$padding;
+  display: inline-block;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+     @include transition(all, 0.5s, ease, 0s);
+     &:hover {
+     background-color:rgba($bgColorHover,0.7);
+         @include transition(all, 0.5s, ease, 0s);
+  }
+}
