@@ -1,17 +1,17 @@
- 
+
 var deleteLog = false;
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
         direction:'horizontal',
         menu: '#menu',
-        anchors: ['welcome', 'aboutMe', 'skills', 'experience','websitePlatforms', 'WhatIDo',  'contactMe', 'section9'],
+        anchors: ['welcome', 'aboutMe', 'skills', 'websitePlatforms', 'WhatIDo',  'contactMe', 'section9'],
         sectionsColor: ['#2ebe21', '#dad8d8', '#51bec4','#2ebe21', '#2C3E50', '#39C','#2ebe21', '#51bec4'],
         loopTop: true,
         loopBottom: true
     });
 });
-    
-// Initialisation canvas 
+
+// Initialisation canvas
 
 
 
@@ -30,7 +30,7 @@ $(window).bind('mousewheel', function(e){
         count2get = count2get.slice(0,-1);
         count3get = count3get.slice(0,-1);
         count4get = count4get.slice(0,-1);
-        if (i == 0) 
+        if (i == 0)
         {
             i = 1;
             var elem1 = document.getElementById("count1set");
@@ -39,10 +39,10 @@ $(window).bind('mousewheel', function(e){
             var elem4 = document.getElementById("count4set");
             var width = 0;
             var id = setInterval(frame, 10);
-            function frame() 
+            function frame()
             {
-                if (width > count4get && width > count3get && width > count2get && width > count1get) 
-                { 
+                if (width > count4get && width > count3get && width > count2get && width > count1get)
+                {
                     clearInterval(id);
                     i = 0;
                 }
@@ -54,7 +54,7 @@ $(window).bind('mousewheel', function(e){
                         }
                     if (width <= count2get)
                         {
-                            elem2.innerHTML = width  + "%"; 
+                            elem2.innerHTML = width  + "%";
                         }
                     if (width <= count3get)
                         {
@@ -64,15 +64,15 @@ $(window).bind('mousewheel', function(e){
                         {
                              elem4.innerHTML = width  + "%";
                         }
-                    width++; 
-                   
-          
+                    width++;
+
+
                 }
             }
         }
     }
 });*/
-    
+
 $(window).on("load", function (e) {
     //preLoader
     $(".preLoader").fadeOut("slow");
@@ -108,5 +108,5 @@ $(window).on("load", function (e) {
             $(".content_1").mCustomScrollbar("scrollTo","h2:last",{scrollInertia:2500,scrollEasing:"easeInOutQuad"}); //scroll to appended content
         });
     });
-   
+
 });
